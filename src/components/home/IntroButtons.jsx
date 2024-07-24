@@ -1,7 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import usePageTransition from '../../custom_hooks/usePageTransition.js';
 
 export default function IntroButtons() {
+
+    // Link handler function from custom hook.
+    const { handleLinkClick } = usePageTransition();
 
     // Intro button details.
     const introButtonDetails = [
@@ -9,11 +13,13 @@ export default function IntroButtons() {
             name: `My Work`,
             icon: 'fa-cookie-bite',
             bgColor: 'green',
+            link: '/projects',
         },
         {
             name: `Let's Connect`,
             icon: 'fa-paper-plane',
             bgColor: 'sky',
+            link: '/connect',
         },
     ];
 
@@ -27,6 +33,7 @@ export default function IntroButtons() {
                     <button
                         key={detail['name']}
                         className={`bg-${detail['bgColor']}-400 py-2 px-4 rounded-xl border-2 border-${detail['bgColor']}-500 hover:scale-110 hover:bg-black hover:text-white duration-300 flex flex-row items-center gap-3`}
+                        onClick={handleLinkClick(detail['link'])}
                     >
                         {detail['name']}
                         <FontAwesomeIcon className="h-6" icon={detail['icon']} />

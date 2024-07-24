@@ -6,9 +6,6 @@ import Nav from './components/nav/Nav.jsx';
 
 export default function App() {
 
-  // State for page transition tailwind classes.
-  const [pageTransition, setPageTransition] = useState('opacity-100 translate-y-0 blur-0');
-
   return (
     <>
       <BackgroundAnimation />
@@ -25,10 +22,11 @@ export default function App() {
         />
       </a>
 
-      <Nav setPageTransition={setPageTransition} />
+      <Nav />
 
       <div
-        className={`${pageTransition} min-h-[100vh] py-4 pb-14 w-full flex justify-center items-center duration-300`}
+        className="min-h-[100vh] py-4 pb-14 w-full flex justify-center items-center duration-300"
+        id="componentContainer"
       >
         <Outlet />
       </div>

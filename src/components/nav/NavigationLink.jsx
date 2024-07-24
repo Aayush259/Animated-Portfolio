@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import usePageTransition from '../../custom_hooks/usePageTransition.js';
 
-export default function NavigationLink({ linkDetails, setPageTransition }) {
+export default function NavigationLink({ linkDetails }) {
 
     // Getting details from linkDetails prop.
     const linkToUrl = linkDetails['linkToUrl'];
     const linkText = linkDetails['linkText'];
     const linkIcon = linkDetails['linkIcon'];
 
-    // Navigate function.
-    const navigate = useNavigate();
-
-    // Location function from useLocation hook.
-    const location = useLocation();
+    // Link handler function from custom hook.
+    const { handleLinkClick } = usePageTransition(linkToUrl);
 
     // State for whether to display navigation link text or not.
     const [linkContentText, setLinkContentText] = useState(true);
@@ -43,34 +41,11 @@ export default function NavigationLink({ linkDetails, setPageTransition }) {
         }
     }, []);
 
-    // Show transition and then change the page to the desired path.
-    const handleNavLinkClick = (e) => {
-        e.preventDefault();
-
-        // If user is already on same page, then do nothing.
-        if (location.pathname === linkToUrl) return;
-
-        // Scroll to top.
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        })
-
-        // Apply transition.
-        setPageTransition('opacity-0 translate-y-12 blur-sm');
-
-        // After 200 milliseconds, change the page and remove the transition.
-        setTimeout(() => {
-            navigate(linkToUrl);
-            setPageTransition('opacity-100 translate-y-0 blur-0');
-        }, 300);
-    };
-
     return (
         <NavLink
             to={linkToUrl}
             className={({isActive}) => `${isActive ? "before:bg-slate-950 lg:before:bg-green-400 lg:before:top-0 before:left-0 lg:before:h-full before:w-full before:h-1 lg:hover:opacity-60 text-slate-950 lg:text-green-400" : "before:bg-white lg:before:top-1/2 lg:before:h-0 before:w-0 before:left-1/2 before:h-1 lg:hover:before:h-full lg:hover:before:top-0"} flex flex-row items-center justify-center gap-2 text-lg text-orange-100 font-semibold tracking-wider cursor-pointer select-none duration-300 relative lg:before:block before:-bottom-2 before:absolute lg:before:-left-3 lg:before:w-1 before:rounded-full lg:before:opacity-100 before:duration-300`}
-            onClick={handleNavLinkClick}
+            onClick={handleLinkClick(linkToUrl)}
         >
             <FontAwesomeIcon icon={linkIcon} />
             {
