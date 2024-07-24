@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationLink from './NavigationLink.jsx';
 
-export default function Nav({ setPageTransition }) {
+export default function Nav() {
 
     // This function returns an object consisting linkText and its icon.
     const getLinkContent = (linkToUrl, linkText, linkIcon) => ({
@@ -23,7 +23,7 @@ export default function Nav({ setPageTransition }) {
 
             {
                 allLinks.map(link => (
-                    <NavigationLink key={link['linkText']} linkDetails={link} setPageTransition={setPageTransition} />
+                    <NavigationLink key={link['linkText']} linkDetails={link} />
                 ))
             }
 

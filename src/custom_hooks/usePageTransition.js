@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function usePageTransition() {
@@ -6,7 +7,7 @@ export default function usePageTransition() {
     const location = useLocation();
 
     // Component container.
-    const componentContainer = document.getElementById('componentContainer');
+    const componentContainer = useRef(null);
 
     // Transition and no transition tailwind classes.
     const transitionClasses = ['opacity-0', 'translate-y-12', 'blur-sm'];
@@ -15,11 +16,11 @@ export default function usePageTransition() {
     // This function apply transition by adding and removing tailwind classes.
     const applyTransition = (classesToAdd, classesToRemove) => {
         classesToAdd.forEach(tailwindClass => {
-            componentContainer.classList.add(tailwindClass);
+            componentContainer.current.classList.add(tailwindClass);
         });
 
         classesToRemove.forEach(tailwindClass => {
-            componentContainer.classList.remove(tailwindClass);
+            componentContainer.current.classList.remove(tailwindClass);
         });
     };
 
@@ -28,7 +29,13 @@ export default function usePageTransition() {
         e.preventDefault();
 
         // If user is already on the same page or there is no componentContainer, then do nothing.
-        if ((location.pathname === linkTo) || !componentContainer) return;
+        if (location.pathname === linkTo) return;
+
+        if (!componentContainer.current) {
+            componentContainer.current = document.getElementById('componentContainer');
+        };
+
+        if (!componentContainer.current) return;
 
         // Scroll to top.
         window.scrollTo({
