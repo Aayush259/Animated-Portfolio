@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import myImage from './images/myImg.jpeg';
 import BackgroundAnimation from './components/background/BackgroundAnimation.jsx';
 import Nav from './components/nav/Nav.jsx';
@@ -25,6 +26,12 @@ export default function App() {
       </a>
 
       <Nav setPageTransition={setPageTransition} />
+
+      <div
+        className={`${pageTransition} min-h-[100vh] py-4 pb-14 w-full flex justify-center items-center duration-300`}
+      >
+        <Outlet />
+      </div>
     </>
   );
 };
