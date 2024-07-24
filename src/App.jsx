@@ -1,12 +1,11 @@
 import React from 'react';
+import BackgroundAnimation from './components/background/BackgroundAnimation';
 
 export default function App() {
 
   return (
     <>
-      <p className="bg-black text-white border">
-        Animated Portfolio
-      </p>
+      <BackgroundAnimation />
     </>
   );
 };
