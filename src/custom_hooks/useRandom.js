@@ -1,10 +1,18 @@
+import { useMemo } from "react";
 
 export default function useRandom(array) {
 
-    for (let i = (array.length - 1); i > 0; i--) {
-        const j = Math.floor(Math.random() * (i+1));
-        [array[i], array[j]] = [array[j], array[i]];
-    };
+    // Shuffling array according to Fisher-Yates Shuffle Algorithm.
+    const shuffledArray = useMemo(() => {
+        const newArray = [...array];
 
-    return array;
+        for (let i = (newArray.length - 1); i > 0; i--) {
+            const j = Math.floor(Math.random() * (i+1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        };
+
+        return newArray;
+    }, [array]);
+
+    return shuffledArray;
 };
