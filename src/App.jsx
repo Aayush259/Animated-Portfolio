@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     const introTimer = setTimeout(() => {
       setShowIntro(false);
-    }, 600);
+    }, 2000);
 
     // Cleanup the timer.
     return () => clearTimeout(introTimer);
