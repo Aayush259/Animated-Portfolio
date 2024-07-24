@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import myImage from './images/myImg.jpeg';
 import BackgroundAnimation from './components/background/BackgroundAnimation.jsx';

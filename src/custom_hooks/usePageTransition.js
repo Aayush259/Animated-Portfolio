@@ -27,8 +27,8 @@ export default function usePageTransition() {
     const handleLinkClick = (linkTo) => (e) => {
         e.preventDefault();
 
-        // If user is already on the same page, then do nothing.
-        if (location.pathname === linkTo) return;
+        // If user is already on the same page or there is no componentContainer, then do nothing.
+        if ((location.pathname === linkTo) || !componentContainer) return;
 
         // Scroll to top.
         window.scrollTo({
