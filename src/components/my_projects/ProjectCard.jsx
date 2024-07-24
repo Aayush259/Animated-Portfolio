@@ -1,4 +1,6 @@
 import React from 'react';
+import TechnologiesUsed from './TechnologiesUsed.jsx';
+import ProjectLinks from './ProjectLinks.jsx';
 
 export default function ProjectCard({ projectDetails }) {
 
