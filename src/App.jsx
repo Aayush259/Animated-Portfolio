@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import myImage from './images/myImg.jpeg';
 import BackgroundAnimation from './components/background/BackgroundAnimation.jsx';
+import Nav from './components/nav/Nav.jsx';
 
 export default function App() {
+
+  // State for page transition tailwind classes.
+  const [pageTransition, setPageTransition] = useState('opacity-100 translate-y-0 blur-0');
 
   return (
     <>
@@ -19,6 +23,8 @@ export default function App() {
           className="rounded-full h-10 md:h-14"
         />
       </a>
+
+      <Nav setPageTransition={setPageTransition} />
     </>
   );
 };
