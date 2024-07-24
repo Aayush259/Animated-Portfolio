@@ -6,6 +6,7 @@ import App from './App.jsx';
 import Home from './components/home/Home.jsx';
 import Projects from './components/my_projects/Projects.jsx';
 import About from './components/about/About.jsx';
+import ConnectWithMe from './components/connect/ConnectWithMe.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path='projects' element={<Projects />} />
       <Route path='about' element={<About />} />
+      <Route path='connect' element={<ConnectWithMe />} />
     </Route>
   )
 );
