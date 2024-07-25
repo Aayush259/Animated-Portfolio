@@ -28,6 +28,11 @@ export default {
       },
 
       keyframes: {
+        'starting-transition' : {
+          '0%': { transform: 'translateY(48px)', blur: '10px' },
+          '100%': { transform: 'translateY(0)', blur: '0' },
+        },
+
         'bg-slide-1': {
           '0%': { transform: 'translateX(100%)', opacity: '0.60' },
           '100%': { transform: 'translateX(-100%)', opacity: '0.60' },
@@ -38,16 +43,27 @@ export default {
           '100%': { transform: 'translateX(-200%)', opacity: '0.60' },
         },
 
+        'text-animation-1': {
+          '0%': { transform: 'scale(0.8)', width: '100%', opacity: '1' },
+          '100%': { transform: 'scale(2)', width: '100%', opacity: '0' },
+        },
+
+        'text-animation-2' :{
+          '0%': { width: '0' },
+          '100%': { width: '100%' },
+        },
+
         'txt-slide': {
           '0%': { opacity: '0', transform: 'translateY(28px)' },
           '10%': { opacity: '1', transform: 'translateY(0)' },
           '20%': { opacity: '1', transform: 'translateY(0)' },
           '30%': { opacity: '0', transform: 'translateY(-28px)' },
           '100%': { opacity: '0', transform: 'translateY(-28px)' },
-        }
+        },
       },
 
       animation: {
+        'starting-transition': 'starting-transition 0.3s ease-in-out',
         'bg-slide-1': 'bg-slide-1 80s linear -80s infinite',
         'bg-slide-2': 'bg-slide-2 80s linear -40s infinite',
         'bg-slide-1-reverse': 'bg-slide-1 60s linear -60s infinite reverse',
@@ -57,6 +73,8 @@ export default {
         'txt-slide-3': 'txt-slide 10s ease-in-out 4s infinite',
         'txt-slide-4': 'txt-slide 10s ease-in-out 6s infinite',
         'txt-slide-5': 'txt-slide 10s ease-in-out 8s infinite',
+        'intro-animation-1': 'text-animation-1 2s ease-in-out 0s alternate',
+        'intro-animation-2': 'text-animation-2 2s ease-in-out 2s alternate',
       },
 
       screens: {
