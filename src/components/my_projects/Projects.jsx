@@ -10,64 +10,26 @@ import useRandom from '../../custom_hooks/useRandom.js';
 
 export default function Projects() {
 
+    // Function to get style object.
+    const getStyleObject = (cardBg, cardBorderColor, headingColor, headingColorHover, technologiesBg, linkBg) => ({
+        cardBg, cardBorderColor, headingColor, headingColorHover, technologiesBg, linkBg
+    });
+
     // Color & background colors for project card.
-    let styles = [
-        {
-            cardBg: 'bg-purple-300',
-            cardBorderColor: 'border-purple-300',
-            headingColor: 'text-purple-950',
-            headingColorHover: 'sm:group-hover:text-violet-100',
-            technologiesBg: 'bg-violet-950',
-            linkBg: 'bg-violet-900',
-        },
-        {
-            cardBg: 'bg-slate-300',
-            cardBorderColor: 'border-slate-300',
-            headingColor: 'text-slate-950',
-            headingColorHover: 'sm:group-hover:text-slate-100',
-            technologiesBg: 'bg-slate-950',
-            linkBg: 'bg-slate-600',
-        },
-        {
-            cardBg: 'bg-red-300',
-            cardBorderColor: 'border-red-300',
-            headingColor: 'text-red-950',
-            headingColorHover: 'sm:group-hover:text-red-100',
-            technologiesBg: 'bg-red-950',
-            linkBg: 'bg-red-600',
-        },
-        {
-            cardBg: 'bg-yellow-300',
-            cardBorderColor: 'border-yellow-300',
-            headingColor: 'text-yellow-950',
-            headingColorHover: 'sm:group-hover:text-yellow-100',
-            technologiesBg: 'bg-yellow-950',
-            linkBg: 'bg-yellow-600',
-        },
-        {
-            cardBg: 'bg-green-300',
-            cardBorderColor: 'border-green-300',
-            headingColor: 'text-green-950',
-            headingColorHover: 'sm:group-hover:text-green-100',
-            technologiesBg: 'bg-green-950',
-            linkBg: 'bg-green-600',
-        },
-        {
-            cardBg: 'bg-amber-300',
-            cardBorderColor: 'border-amber-300',
-            headingColor: 'text-amber-950',
-            headingColorHover: 'sm:group-hover:text-amber-100',
-            technologiesBg: 'bg-amber-950',
-            linkBg: 'bg-amber-600',
-        },
-        {
-            cardBg: 'bg-indigo-300',
-            cardBorderColor: 'border-indigo-300',
-            headingColor: 'text-indigo-950',
-            headingColorHover: 'sm:group-hover:text-indigo-100',
-            technologiesBg: 'bg-indigo-950',
-            linkBg: 'bg-indigo-600',
-        },
+    const styles = [
+        getStyleObject('bg-purple-300', 'border-purple-300', 'text-purple-950', 'sm:group-hover:text-violet-100',  'bg-violet-950', 'bg-violet-900'),
+
+        getStyleObject('bg-slate-300', 'border-slate-300', 'text-slate-950', 'sm:group-hover:text-slate-100', 'bg-slate-950', 'bg-slate-600'),
+
+        getStyleObject('bg-red-300', 'border-red-300', 'text-red-950', 'sm:group-hover:text-red-100', 'bg-red-950', 'bg-red-600'),
+
+        getStyleObject('bg-yellow-300', 'border-yellow-300', 'text-yellow-950', 'sm:group-hover:text-yellow-100', 'bg-yellow-950', 'bg-yellow-600'),
+
+        getStyleObject('bg-green-300', 'border-green-300', 'text-green-950', 'sm:group-hover:text-green-100', 'bg-green-950', 'bg-green-600'),
+
+        getStyleObject('bg-amber-300', 'border-amber-300', 'text-amber-950', 'sm:group-hover:text-amber-100', 'bg-amber-950', 'bg-amber-600'),
+
+        getStyleObject('bg-indigo-300', 'border-indigo-300', 'text-indigo-950', 'sm:group-hover:text-indigo-100', 'bg-indigo-950', 'bg-indigo-600',),
     ];
 
     // Shuffled array for color & background colrs for project card.
