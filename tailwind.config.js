@@ -43,16 +43,6 @@ export default {
           '100%': { transform: 'translateX(-200%)', opacity: '0.60' },
         },
 
-        'text-animation-1': {
-          '0%': { transform: 'scale(0.8)', width: '100%', opacity: '1' },
-          '100%': { transform: 'scale(2)', width: '100%', opacity: '0' },
-        },
-
-        'text-animation-2' :{
-          '0%': { width: '0' },
-          '100%': { width: '100%' },
-        },
-
         'txt-slide': {
           '0%': { opacity: '0', transform: 'translateY(28px)' },
           '10%': { opacity: '1', transform: 'translateY(0)' },
@@ -106,8 +96,6 @@ export default {
         'txt-slide-3': 'txt-slide 10s ease-in-out 4s infinite',
         'txt-slide-4': 'txt-slide 10s ease-in-out 6s infinite',
         'txt-slide-5': 'txt-slide 10s ease-in-out 8s infinite',
-        'intro-animation-1': 'text-animation-1 2s ease-in-out 0s alternate',
-        'intro-animation-2': 'text-animation-2 2s ease-in-out 2s alternate',
         first: "moveVertical 5s ease infinite",
         second: "moveInCircle 12s reverse infinite",
         third: "moveInCircle 17s linear infinite",
