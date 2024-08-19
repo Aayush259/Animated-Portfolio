@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import myImage from './images/myImg.jpeg';
 import BackgroundAnimation from './components/background/BackgroundAnimation.jsx';
 import Nav from './components/nav/Nav.jsx';
@@ -9,6 +10,8 @@ import { BackgroundGradientAnimation } from './components/background/background-
 export default function App() {
 
   const [showIntro, setShowIntro] = useState(true);
+
+  const location = useLocation();
 
   // Hide intro after 2 seconds.
   useEffect(() => {
@@ -22,40 +25,47 @@ export default function App() {
 
   return (
     <>
-    <div className="fixed w-screen h-screen overflow-hidden">
-      <BackgroundGradientAnimation />
-    </div>
-        {
-          showIntro ? <WelcomeScreen /> : (
+      <div className="fixed w-screen h-screen overflow-hidden">
+        <BackgroundGradientAnimation />
+      </div>
+      {
+        showIntro ? <WelcomeScreen /> : (
 
-            <>
-              <BackgroundAnimation />
+          <>
+            <BackgroundAnimation />
 
-              <div className="animate-starting-transition">
-                <a
-                  href="https://github.com/Aayush259"
-                  target="_blank"
-                  className="fixed z-20 right-4 top-4 block duration-300 hover:scale-110"
-                >
-                  <img
-                    src={myImage}
-                    alt="Aayush"
-                    className="rounded-full h-10 md:h-14"
-                  />
-                </a>
+            <div>
+              <a
+                href="https://github.com/Aayush259"
+                target="_blank"
+                className="fixed z-20 right-4 top-4 block duration-300 hover:scale-110"
+              >
+                <img
+                  src={myImage}
+                  alt="Aayush"
+                  className="rounded-full h-10 md:h-14"
+                />
+              </a>
 
-                <Nav />
+              <Nav />
 
-                <div
-                  className="min-h-[100vh] py-4 pb-14 w-full flex justify-center items-center duration-300 z-40"
-                  id="componentContainer"
-                >
-                  <Outlet />
-                </div>
-              </div>
-            </>
-          )
-        }
+              <motion.div
+                initial={{ y: '48px', filter: 'blur(12px)' }}
+                animate={{ y: 0, filter: 'blur(0)' }}
+                transition={{
+                  duration: 0.3,
+                  ease: 'easeInOut'
+                }}
+                key={location.pathname}
+                className="min-h-[100vh] py-4 pb-14 w-full flex justify-center items-center z-40"
+                id="componentContainer"
+              >
+                <Outlet />
+              </motion.div>
+            </div>
+          </>
+        )
+      }
     </>
   );
 };
