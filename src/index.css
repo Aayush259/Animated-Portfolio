@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+    @apply w-1;
+}
+
+::-webkit-scrollbar-track {
+    @apply w-0 overflow-visible bg-gray-500;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-indigo-900 rounded-lg hover:bg-indigo-950 transition-all duration-200;
+}
