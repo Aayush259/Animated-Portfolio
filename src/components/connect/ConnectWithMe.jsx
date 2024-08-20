@@ -5,7 +5,7 @@ export default function ConnectWithMe() {
 
     return (
         <div
-            className="bg-lime-500 p-4 bg-opacity-80 border-4 border-lime-500 rounded-xl text-white bg-home-bg m-4 z-10 border-home-bg w-[850px] max-w-[90vw] lg:left-28 md:m-5 duration-300 tracking-wider md:text-2xl md:px-6"
+            className="bg-sky-400 p-4 bg-opacity-45 border-4 border-sky-400 rounded-xl text-white bg-home-bg m-4 z-10 border-home-bg w-[850px] max-w-[90vw] lg:left-28 md:m-5 duration-300 tracking-wider md:text-2xl md:px-6"
         >
 
             <h2
