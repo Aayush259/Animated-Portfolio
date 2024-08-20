@@ -61,7 +61,7 @@ export default function BackgroundAnimation() {
     };
     
     return (
-        <div className="w-full h-[100vh] fixed top-0 left-0 overflow-hidden bg-blend-overlay filter blur-[0.5px] z-10">
+        <div className="w-full h-[100vh] fixed top-0 left-0 overflow-hidden bg-blend-overlay bg-transparent filter blur-[0.5px]">
             {
                 Array(18).fill().map((_, i) => (
                     <div key={i} className="flex row flex-row flex-nowrap text-nowrap whitespace-nowrap rotate-[-30deg] relative -top-1/2 -left-12">
