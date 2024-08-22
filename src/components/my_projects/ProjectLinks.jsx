@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function ProjectLinks({ repoLink, liveLink, bgColor }) {
@@ -20,13 +21,19 @@ export default function ProjectLinks({ repoLink, liveLink, bgColor }) {
 
             {
                 links.map(link => (
-                    <a
+                    <motion.a
+                    whileHover={{ scale: 1.25, opacity: 0.75 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{
+                      duration: 0.2,
+                      ease: 'easeInOut'
+                    }}
                         key={link['linkIcon']}
                         href={link['link']}
-                        className={`flex items-center justify-center duration-300 p-2 rounded-full ${bgColor} text-white hover:scale-125 hover:opacity-75`}
+                        className={`flex items-center justify-center p-2 rounded-full ${bgColor} text-white`}
                     >
                         <FontAwesomeIcon icon={link['linkIcon']} />
-                    </a>
+                    </motion.a>
                 ))
             }
 

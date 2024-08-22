@@ -35,17 +35,23 @@ export default function App() {
             <BackgroundAnimation />
 
             <div>
-              <a
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                transition={{
+                  duration: 0.2,
+                  ease: 'easeInOut'
+                }}
                 href="https://github.com/Aayush259"
                 target="_blank"
-                className="fixed z-20 right-4 top-4 block duration-300 hover:scale-110"
+                className="fixed z-20 right-4 top-4 block"
               >
                 <img
                   src={myImage}
                   alt="Aayush"
                   className="rounded-full h-10 md:h-14"
                 />
-              </a>
+              </motion.a>
 
               <Nav />
 
