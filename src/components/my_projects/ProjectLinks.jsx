@@ -4,16 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function ProjectLinks({ repoLink, liveLink, bgColor }) {
 
+    // Function to get links object.
+    const getLinks = (
+        linkIcon,
+        link,
+    ) => ({
+        linkIcon,
+        link,
+    });
+
     // Links with their icons.
     const links = [
-        {
-            linkIcon: 'fa-brands fa-github',
-            link: repoLink,
-        },
-        {
-            linkIcon: 'fa-solid fa-link',
-            link: liveLink,
-        },
+        getLinks(
+            'fa-brands fa-github',
+            repoLink,
+        ),
+        getLinks(
+            'fa-solid fa-link',
+            liveLink,
+        ),
     ];
 
     return (

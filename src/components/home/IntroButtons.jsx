@@ -8,20 +8,33 @@ export default function IntroButtons() {
     // Link handler function from custom hook.
     const { handleLinkClick } = usePageTransition();
 
+    // Function to get intro button details object.
+    const getIntroButtonDetails = (
+        name,
+        icon,
+        bgColor,
+        link,
+    ) => ({
+        name,
+        icon,
+        bgColor,
+        link,
+    });
+
     // Intro button details.
     const introButtonDetails = [
-        {
-            name: `My Work`,
-            icon: 'fa-cookie-bite',
-            bgColor: 'green',
-            link: '/projects',
-        },
-        {
-            name: `Let's Connect`,
-            icon: 'fa-paper-plane',
-            bgColor: 'sky',
-            link: '/connect',
-        },
+        getIntroButtonDetails(
+            `My Work`,
+            'fa-cookie-bite',
+            'green',
+            '/projects',
+        ),
+        getIntroButtonDetails(
+            `Let's Connect`,
+            'fa-paper-plane',
+            'sky',
+            '/connect',
+        ),
     ];
 
     return (

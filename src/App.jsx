@@ -9,6 +9,7 @@ import { BackgroundGradientAnimation } from './components/background/background-
 
 export default function App() {
 
+  // State to control the visibility of the intro screen on page load.
   const [showIntro, setShowIntro] = useState(true);
 
   const location = useLocation();
