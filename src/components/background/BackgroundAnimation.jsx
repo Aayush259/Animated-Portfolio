@@ -17,9 +17,7 @@ export default function BackgroundAnimation() {
         const allIcons = document.querySelectorAll('.row div>*');
 
         allIcons.forEach(icon => {
-            icon.classList.add('p-24');
-            icon.classList.add('sm:p-36');
-            icon.classList.add('rotate-[30deg]');
+            icon.classList.add('p-24', 'sm:p-36', 'rotate-[30deg]');
         });
 
         setTimeout(() => {
