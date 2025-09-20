@@ -6,21 +6,27 @@
 
 ### [📙 Dictionary](https://aayush259.github.io/Dictionary/)
 A React-based web app designed to help users look up words, view their definitions, phonetics, and example sentences with theme toggling and history tracking features.
+![Dictionary](./src/images/dictionary-project.jpg)
 
 ### [🎧 Sound Sphere](https://aayush259.github.io/E-Commerce/)
 A frontend-only e-commerce application which provides a seamless and interactive user experience for browsing and purchasing products. It primarily focuses on product listing, cart management, and wishlist management.
+![Sound Sphere](./src/images/sound-sphere-project.jpg)
 
 ### [🌍 Where in the World](https://aayush259.github.io/Where-in-the-world/)
 A React-based web app that allows users to explore information about countries around the world with dynamic theming, infinite scrolling, and advanced filtering capabilities.
+![Where in the world](./src/images/where-in-the-world-project.jpg)
 
 ### [📍 IP Address Tracker](https://aayush259.github.io/IP-Address-Tracker/)
 A React-based web app that allows users to search for any IP address or domain and displays information such as the IP address, location, timezone, and ISP. The application also displays the location on a map.
+![IP Address Tracker](./src/images/ip-address-tracker-project.jpg)
 
 ### [⏰ Clock App](https://aayush259.github.io/Clock/)
 A Vanilla JS-based simple yet functional web app that displays the current time, provides a stopwatch feature, and allows users to set countdown timers.
+![Clock](./src/images/sound-sphere-project.jpg)
 
 ### 🖩 [Calculator](https://aayush259.github.io/Calculator-Challenge/)
 A pure Vanilla JS-based web app that performs basic arithmetic operations and provides three themes.
+![Calculator](./src/images/calculator-project.jpg)
 
 ## Connect
 
